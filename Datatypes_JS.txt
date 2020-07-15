@@ -1,0 +1,245 @@
+JavaScript is a scripting language for the web. Like any other programming language, it has its own data types. A data type in a language defines the type of data a variable can hold. In this article, we will discuss the various data types in JavaScript in detail:
+
+Difference Between Primitive and Non-Primitive Data Types in JavaScript
+Primitive Data Types in JavaScript
+The Non-Primitive Data Types
+Difference Between Undefined and Null
+Two discrepancies of Data Types in JavaScript
+ 
+
+JavaScript has seven types. Types are values that JavaScript can have. Below is a list of data types that JavaScript can have:
+
+Number
+String
+Boolean
+Undefined
+Null
+Object
+Symbol
+data-types-in-javascript
+
+The ‘Symbol’ data type is new in JavaScript. It has been included in the ES6 version. We can find the type of value or data by using the ‘typeof’ JavaScript operator. The above data types in JavaScript are divided into two broad categories, primitive and non-primitive.
+
+The Primitive Data types in JavaScript include Number, String, Boolean, Undefined, Null and Symbol.
+
+The Non-Primitive data type has only one member i.e. the Object.
+
+ 
+
+Difference Between Primitive and Non-Primitive Data Types in JavaScript
+JavaScript primitive data types are data types that refer to a single value.
+
+E.g. var a =5;
+
+Here the variable ‘a’ is an integer data type and has a single integer value. The variable ‘a’ refers to a single value in memory. If we want to change the value of a, we would have to assign a new value to a.  Primitive data types are not mutable.
+
+When we create a variable, it reserves a space for itself in the memory. The variable ‘a’ has space in memory which holds its value. When we try to change the value of ‘a’ by assigning another value like var a = 6, it doesn’t alter the value of the original a, it just creates a new variable ‘a’ with the new value 6.
+
+We can assign the value of ‘a’ to another variable like this:
+
+var a1=a;
+
+Here the variable ‘a1’ is assigned the value of ‘a’, not the address of ‘a’ in memory.
+
+Thus ‘a1’ now holds the same value as ‘a’.
+
+We can compare the two variables ‘a’ and ‘a1’ as the two variables refer to the same value now.
+
+Using the comparison operator will return a Boolean value of ‘true’.
+
+a===a1 // equals to ‘true’ as ‘===’  checks both the value and type of these two variables are true.
+
+ 
+
+JavaScript non-primitive types are objects. An object holds a reference/address of a single key-value pair or many key-value pairs. Whenever we refer to an object, we refer to an address in memory which contains the key-value pair. If we assign an object ‘object1’ to another object ‘object2’, we are actually assigning the address of ‘object1’ to ‘object2’ instead of the key-value pair which the ‘object1’ contains in memory. Let’s see below”.
+
+var object1= {a:5, a1:6};
+
+var object2 = object1;
+
+The above statement assigns the address of object2 to object1, and not the value {a:5, a1:6}. Thus with this assignment ‘object1’ and ‘object2’ refer to the same address in memory.
+
+When we compare these two objects, we find that both of them refer to the same address in memory.
+
+object1===object2 //will return true, as both refer to the same address. If we compare two separate objects like below:
+
+var object1= {a:5, a1:6};
+
+var object2 = {a:5, a1:6};
+
+This statement object1===object2 // would return a false because both the objects refer to two separate addresses in memory. When we compare two objects, we compare their addresses, not their values.
+
+We have seen above in case of primitive data types, that when we assign the variable ‘a’ to variable ‘a1’, the value of ‘a’ is copied to ‘a1’, and not its address which happens in non-primitive data types.
+
+Thus primitive data types refer to a ‘single value’ in an address in memory whereas non-primitive data types refer to the ‘address’ in memory which contains single or multiple key-value pair/s.
+
+ 
+
+Primitive Data Types
+Primitive data types are number, string, boolean, NULL, Infinity and symbol. Non-primitive data types is the object. The JavaScript arrays and functions are also objects.
+
+ 
+
+Numbers:
+
+A number data type can be an integer, a floating point value, an exponential value, a ‘NaN’ or a ‘Infinity’.
+
+1
+2
+3
+var a=250;  // integer value
+var b=25.5;  // a number containing a decimal 
+var c = 10e4 //  an exponential value which evaluates to 10*10000;
+ 
+
+There are special numeric values e.g. NaN and Infinity.
+
+If a number is divided by 0, the resulting value is infinity.
+
+1
+2
+3
+5/0;    // results in infinity
+The type of infinity is a number
+typeof(infinity);   // returns number
+ 
+
+Course Curriculum
+JavaScript and JQuery Essentials Training and Certification
+Course DurationReal-life Case StudiesAssignmentsLifetime Access
+A ‘NaN’ results when we try to perform an operation on a number with a non-numeric value
+
+1
+2
+‘hi’ * 5; // returns NaN
+typeof(NaN);  // returns a number
+ 
+
+We can also create a number literal by using the Number() function:
+
+1
+2
+var c = Number(5); 
+console.log(c);  // This will return 5
+ 
+
+We can create a number object using the ‘new’ operator and the Number() constructor:
+
+1
+2
+3
+var num1= new Number(5);
+console.log(num1); // This will return 5
+typeof(num1); // This will return ‘number’
+ 
+
+String:
+
+The string data type in JavaScript can be any group of characters enclosed by a single or double-quotes or by backticks.
+
+1
+2
+3
+var str1 = “This is a string1”;  // This is a string primitive type or string literal
+var str2= ‘This is a string2’;
+var str3 = `This is a string3`;
+ 
+
+Alternatively, we can use the String() function to create a new string.
+
+1
+var str4 = String(‘hi’);  // This creates a string literal with value ‘hi’
+ 
+
+The String() function is also used to convert a non-string value to a string.
+
+1
+String(4); // This statement will create a string ‘4’
+Like the ‘number’ and the ‘boolean’ data types, a ‘String’ object can be created using the ‘new’ operator:
+
+1
+2
+var str5= new String(“hello”);  // This is a string object
+console.log(str4); // This will return the string ‘hello’
+ 
+
+Boolean:
+
+The boolean data type has only two values, true and false. It is mostly used to check a logical condition. Thus Booleans are logical data types which can be used for comparison of two variables or to check a condition. The true and false implies a ‘yes’ for ‘true’ and a ‘no’ for ‘false in some places when we check a condition or the existence of a variable or a value.
+
+When we check the data type of ‘true’ or ‘false’ using typeof operator, it returns a boolean.
+
+1
+2
+typeof(true) // returns boolean
+typeof(false) // returns boolean
+ 
+
+Let’s see an example of comparison statement:
+
+1
+2
+3
+var a =5;
+var b=6;
+a==b // returns false
+ 
+
+A boolean value is also used to check a condition in an expression:
+
+1
+2
+3
+If(a<b){
+alert(a is a smaller number than b);
+}
+If the above condition ‘a<b’ is true, the alert will pop on the screen.
+
+ 
+
+We can create a new Boolean variable using the Boolean() function.
+
+1
+2
+var check = Boolean(expression);  // If the expression evaluates to true, the value of ‘check’ will be true or else it will be false.
+var check = Boolean(a<b); // the expression evaluates to true, thus the value of check will be true.
+The Boolean() function converts a non-boolean value to a boolean value.
+
+1
+2
+var mystring = ‘hi there’;
+Boolean(mystring); // This will result in true because the ‘mystring’ value exists.
+ 
+
+ 
+
+A Boolean object can be created using the new operator.
+
+1
+var booleanobj = new Boolean(true);
+Here ‘boolleanobj’ is a Boolean object.
+
+Though we can create an object of the primitive data types, ‘number’,’boolean’ and ‘number’ it is advisable or good practice to use the primitive version of these types.
+
+ 
+
+Undefined:
+
+Undefined data type means a variable that is not defined. The variable is declared but doesn’t contain any value.
+
+1
+2
+var a;
+console.log(a); // This will return undefined.
+The variable ‘a’ has been declared but hasn’t been assigned a value yet.
+We can assign a value to a:
+
+1
+2
+a=5;
+console.log(a); // This will return 5
+ 
+
+Null:
+
+The null in JavaScript is a data type that is represented by only one value, the ‘null’ itself. A null value means no value.
